@@ -1,0 +1,46 @@
+.profile {
+    cursor: pointer;
+    font-family: FiraSans;
+    margin-top: 75px;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        background-color: #f3f3f3;
+        padding: 15px;
+        border-radius: 5px;
+
+        &_img {
+            border-radius: 100%;
+            height: 100px;
+        }
+
+        &_textBlock {}
+
+        &_names {
+            display: flex;
+            gap: 20px;
+        }
+
+        &_personaname {
+            margin: 0;
+        }
+
+        &_ids {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #525252;
+        }
+
+        &_nameId {
+            font-weight: 600;
+        }
+
+        &_valueId {
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+}

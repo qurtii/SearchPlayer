@@ -1,0 +1,45 @@
+a {
+    text-decoration: none;
+}
+
+.header {
+    font-family: FiraSans;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &_img {
+            height: 50px;
+        }
+
+        &_text {
+            user-select: none;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+    }
+
+    &__links {
+        display: flex;
+        gap: 10px;
+
+        &_btn {
+            color: #000;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__account {
+        display: flex;
+        gap: 15px;
+    }
+}
