@@ -1,17 +1,23 @@
 import { useEffect, useState } from "react"
 import styles from "./style.module.scss"
 import { useProfile } from "../../../../hooks/useProfile"
+import { useLastMatches } from "../../../../hooks/useLastMatches"
 
 export function Result(){
 
     const { data, isError, isLoading, isSuccess } = useProfile("321580662")
-    // const [winrate, setWinrate] = useState()
+    const [matches, setMatches] = useState("")
+    const { data: dataMatches, isSuccess: isSuccessMatches} = useLastMatches('321580662')
+
+    useEffect(() => {
+        if (isSuccessMatches){
+            setMatches(dataMatches)
+            console.log(matches)
+            console.log(dataMatches)
+        }
+    },[isSuccessMatches])
+
     
-    // useEffect(() => {
-    //     console.log(data)
-    //     let all_matches = data.win + data.lose
-    //     setWinrate((data.win / all_matches * 100).toFixed(2))
-    // }, [data])
     return( 
         <> 
         {isLoading ? 
@@ -33,9 +39,20 @@ export function Result(){
                             <p className={styles.profile__header_nameId}>Dota ID: <span className={styles.profile__header_valueId}>{data?.profile.account_id}</span></p>
                             <p className={styles.profile__header_nameId}>Steam ID: <span className={styles.profile__header_valueId}>{data?.profile.steamid}</span></p>
                         </div>
-                        <div className={styles.profile__header_lastMatches}>
-
-                        </div>
+                        {matches.length === 0 ? (
+                            <p>Нет доступных данных о матчах.</p>
+                        ) : (
+                            <ul className={styles.profile__header_lastMatches}>
+                            {matches.map((match) => {
+                                const win = (match.player_slot < 128) === match.radiant_win;
+                                return (
+                                    <li className={win ? styles.profile__header_win : styles.profile__header_lose} key={match.match_id}>
+                                        {win ? 'W' : 'L'}
+                                    </li>
+                                );
+                            })}
+                            </ul>
+                        )}
                     </div>
                 </div>
             </div>

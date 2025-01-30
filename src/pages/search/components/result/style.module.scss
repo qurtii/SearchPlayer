@@ -1,3 +1,7 @@
+li {
+    list-style: none;
+}
+
 .profile {
     cursor: pointer;
     font-family: FiraSans;
@@ -42,5 +46,21 @@
             font-weight: 400;
             font-style: italic;
         }
+
+        &_lastMatches {
+            display: flex;
+            gap: 5px;
+        }
+
+        &_win {
+            color: #008537;
+            font-weight: 700;
+        }
+
+        &_lose {
+            color: #9b0000;
+            font-weight: 700;
+        }
     }
+
 }
