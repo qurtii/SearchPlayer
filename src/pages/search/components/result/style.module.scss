@@ -1,3 +1,9 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 li {
     list-style: none;
 }
@@ -14,6 +20,7 @@ li {
         background-color: #f3f3f3;
         padding: 15px;
         border-radius: 5px;
+        width: 100%;
 
         &_img {
             border-radius: 100%;
@@ -27,19 +34,20 @@ li {
             gap: 20px;
         }
 
-        &_personaname {
-            margin: 0;
+        &_name {
+            font-size: 26px;
         }
 
         &_ids {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #525252;
+            color: #aaaaaa;
         }
 
         &_nameId {
             font-weight: 600;
+            font-size: 15px;
         }
 
         &_valueId {
@@ -47,19 +55,49 @@ li {
             font-style: italic;
         }
 
+        &_winrateBlock {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+            gap: 10px;
+        }
+
         &_lastMatches {
             display: flex;
             gap: 5px;
+
+            background-color: #e4e4e4;
+            padding: 6px;
+            border-radius: 4px;
         }
 
         &_win {
+            font-size: 18px;
             color: #008537;
             font-weight: 700;
         }
 
         &_lose {
+            font-size: 18px;
             color: #9b0000;
             font-weight: 700;
+        }
+
+        &_wr {
+            background-color: #e4e4e4;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        &_positive {
+            font-size: 16.5px;
+            font-weight: 700;
+            color: #019940;
+        }
+
+        &_negative {
+            font-weight: 700;
+            color: #b90000;
         }
     }
 

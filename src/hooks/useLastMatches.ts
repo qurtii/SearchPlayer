@@ -2,7 +2,7 @@ import axios from "axios"
 import { useQuery } from "@tanstack/react-query";
 
 const getMatches = async (userID: string) => {
-    const response = await axios.get(`https://api.opendota.com/api/players/${userID}/matches?limit=5`)
+    const response = await axios.get(`https://api.opendota.com/api/players/${userID}/matches?limit=10`)
     return response.data;
 }
 
